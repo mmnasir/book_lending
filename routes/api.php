@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use app\Http\Controllers\Api\BookController;
-use app\Http\Controllers\Api\LoanController;
+use App\Http\Controllers\Api\BookController;
+use App\Http\Controllers\Api\LoanController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/books', [BookController::class, 'index']);
