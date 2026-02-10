@@ -7,4 +7,8 @@ namespace App\Repositories;
 interface BookRepositoryInterface
 {
     public function all(): array;
+
+    public function decrementAvailableCopiesAtomic(int $bookId): bool;
+
+    public function incrementAvailableCopies(int $bookId): void;
 }

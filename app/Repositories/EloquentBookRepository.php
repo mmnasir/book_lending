@@ -16,4 +16,21 @@ final class EloquentBookRepository implements BookRepositoryInterface
             ->get()
             ->toArray();
     }
+
+    public function decrementAvailableCopiesAtomic(int $bookId): bool
+    {
+        $affected = Book::query()
+            ->whereKey($bookId)
+            ->where('available_copies', '>', 0)
+            ->decrement('available_copies');
+
+        return $affected > 0;
+    }
+
+    public function incrementAvailableCopies(int $bookId): void
+    {
+        Book::query()
+            ->whereKey($bookId)
+            ->increment('available_copies');
+    }
 }
