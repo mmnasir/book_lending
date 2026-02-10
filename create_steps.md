@@ -30,3 +30,32 @@ create a simple seeder for the books and members and then : pgp artisan db:seed
 
 step000=> create docker file and docker-compose file => 
 step000=> move the database to docker => 
+
+
+Docker Steps:
+1 => Dockerfile erstellen
+2 => docker-compose.yml file erstellen
+3 => docker-compose up --build -d
+
+please update your .env ::
+DB_CONNECTION=mysql
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=book_lending
+DB_USERNAME=dbuser
+DB_PASSWORD=password
+then: docker exec -it book_lending_app php artisan optimize:clear
+
+then migrate and import the seeder classes intho db
+docker exec -it book_lending_app php artisan migrate:fresh --seed
+
+
+tyo test:
+post on: http://127.0.0.1:8888/api/loans
+{
+"book_id": 1,
+"member_id": 1
+}
+
+to testthe unit tests:
+docker exec -it book_lending_app php artisan test --testsuite=Unit
