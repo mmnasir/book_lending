@@ -9,8 +9,6 @@ use App\Http\Requests\CreateLoanRequest;
 use App\Models\Loan;
 use Illuminate\Http\JsonResponse;
 use App\Services\LoanService;
-use App\Exceptions\OutOfStockException;
-
 
 class LoanController extends Controller
 {
@@ -40,4 +38,3 @@ class LoanController extends Controller
     }
 
 }
-

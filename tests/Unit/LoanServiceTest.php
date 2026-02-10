@@ -5,7 +5,6 @@ declare(strict_types=1);
 
 namespace Tests\Unit;
 
-
 use App\Exceptions\OutOfStockException;
 use App\Models\Loan;
 use App\Repositories\BookRepositoryInterface;

@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Member;
-use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -20,9 +18,9 @@ class DatabaseSeeder extends Seeder
             BookSeeder::class,
         ]);
 
-         $this->call([
-             MemberSeeder::class,
-         ]);
+        $this->call([
+            MemberSeeder::class,
+        ]);
 
     }
 }

@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\BookRepositoryInterface;
 use Illuminate\Http\JsonResponse;
 
-class BookController  extends Controller
+class BookController extends Controller
 {
     //todo construct
     public function __construct(private readonly BookRepositoryInterface $books)
